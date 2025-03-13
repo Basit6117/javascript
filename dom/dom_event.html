@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="items">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsam, et quae sunt id suscipit amet exercitationem nemo impedit repellat, molestiae eius asperiores praesentium quod animi voluptas magnam qui laborum. Doloremque eum impedit natus harum voluptates maiores repellat iste aut!</p>
+    <button id="btn" onclick="changeDom()">Click</button>
+
+<p id="para2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem asperiores dolore iure praesentium sequi expedita ea, quos quibusdam velit eum ad. Numquam ipsa architecto veritatis ex nisi esse ullam aliquam soluta ut hic repellat quidem illum inventore, modi maiores est consequuntur labore magnam quibusdam quod ipsum voluptatum, doloremque, quisquam sit?</p>
+<button onclick="changePic()">Click</button>
+<img id="img1" width="100px" src="/dom/images/img1.png" alt="">
+<br>
+<br>
+<br>
+<form id="f1" action="">
+    <label for="">Name</label>
+    <input type="text" id="username">
+    <label for="">Password</label>
+    <input type="password" id="pwd">
+</form>
+
+<h1 style="background-color: aqua;" id="heading1" onclick="func(this)">Lorem quas,nostrum illum reiciendis molestiae rerum fugit harum sed aspernatur dolorem quam modi iure odit molestias. Accusamus.</h1>
+<h1 style="background-color: rgb(221, 223, 223);" id="heading2" onclick="func(this)">Lorem quas,nostrum illum reiciendis molestiae rerum fugit harum sed aspernatur dolorem quam modi iure odit molestias. Accusamus.</h1>
+<script>
+    const fun = () =>{
+         document.getElementById("btn").innerHTML = "processing..."
+    }
+
+    const changeDom = () =>{
+
+        //changing inner text of tags
+        let t = document.getElementById("para").innerHTML
+document.querySelector("#para").style.backgroundColor = "red"
+        let cap = t.toUpperCase();
+        document.getElementById("para").innerHTML = cap;
+    }
+
+    const changePic = () =>{
+        //changing attributes of tags
+        document.getElementById("img1").width = '200'
+       const username = document.forms["f1"]['username'].value;
+       const pwd = document.forms["f1"]['pwd'].value;
+       console.log(username, pwd);
+
+       const h3 = document.createElement("h3");
+       h3.id = "h3";
+       h3.textContent = "this is heading 3";
+       document.body.appendChild(h3);
+
+       const li = document.createElement("li")
+    li.innerHTML = "New item";
+    document.getElementById("items").appendChild(li);
+
+    const head1 = document.getElementById("heading1");
+    head1.setAttribute('class','newClass');
+ }
+
+ const func = (para) =>{
+    if(para.id === 'heading1'){
+        // alert('heading 1 clicked')
+    }
+    else{
+        // alert('heading 2 clicked')
+    }
+ }
+
+
+</script>
+</body>
+</html>
