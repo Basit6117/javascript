@@ -67,3 +67,46 @@
 //         })
 //     })
 // })
+
+//////////await async///////////////////
+const one = () =>{
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            console.log('one');
+            resolve();
+        },3000)
+    })
+}
+const two = () =>{
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            console.log('two');
+            resolve();
+        },1000)
+    })
+}
+const three = () =>{
+    return new Promise((resolve, reject) => {
+        setTimeout(() =>{
+            console.log('three');
+        })
+    })
+}
+
+ async function run() { //function should be async for await
+    
+await  one();
+await  two();
+await three();
+}
+run();
+
+// const getData = () =>{
+//     const data = fetch('https://api.github.com/users/data').then((res =>{
+
+//     }))
+// }
+const getData = async () =>{
+    const data = await fetch('https://api.github.com/users/data');
+    console.log(data.lenght);
+}
