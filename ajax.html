@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using ajax</title>
+</head>
+<body>
+    <ul id="titles"></ul>
+    <button onclick="loadData()">Load Data</button>
+    <div id="data"></div>
+
+<script>
+    const loadData = () =>{
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function (){
+        if(this.readyState == 4 && this.status == 200){
+            const todos = JSON.parse(xhr.responseText);
+            const titles = todos.map(todo => {todo.title
+
+                const li =  document.createElement('li')
+                li.textContent = todo.title
+                document.getElementById('titles').appendChild(li);
+            })
+            
+        }
+    }
+    xhr.open('GET','https://jsonplaceholder.typicode.com/todos',true);
+    xhr.send();
+}
+</script>
+</body>
+</html>
