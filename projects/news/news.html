@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <label for="">News</label>
+            <div class="address"></div>
+        </tbody>
+    </table>
+    <script>
+        fetch("9840uio4werlkjdnfulaiirewoirewklrjeiurueorkkirewiier")
+        .then(res =>json())
+        .then(json =>{
+const h3 = document.createElement("h3")
+h3.innerHTML = json.address.state
+document.getElementById('address').appendChild(h3);
+
+        })
+        
+    </script>
+</body>
+</html>

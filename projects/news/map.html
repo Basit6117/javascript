@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map api</title>
+</head>
+<body>
+<iframe id="map" src="" frameborder="0"></iframe>
+
+    <script>
+        navigator.geolocation.getCurrentPosition((position) =>{
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            document.getElementById('map').setAttribute('src',`//maps.google.com/maps?q=${lat},${position.coords.longitude}&z=14&output=embed`)
+        })
+    </script>
+</body>
+</html>
