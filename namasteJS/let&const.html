@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>let, const, temporal deadzone , and reference error</h1>
+
+    <script>
+        // console.log(b)
+        // let a=600;
+        // console.log(a)
+        // var b = 300;
+        //let is more strict than var
+
+        //_________________syntax error_________________________
+        // we cant reinitializes let varibales it will through syntax error
+        // let x=10;
+        // let x=1; //syntax error
+        //_____________________________
+        // reinitalization is possible in case of var 
+        // var q= 10;
+        // var q= 12;
+        // console.log(q);
+
+        //__________________
+        // we cannot reinitalize and redaclre a const 
+        // const w = 111111;
+        // w=222222;
+        // console.log(w);//type error
+        // ______also cant do 
+        // const s;
+        // s = 444444;
+        // console.log(s)//syntax error
+
+        {
+            var var1 =10; 
+            let var2 =190; 
+            const var3 =8000; 
+            console.log(var1);
+            console.log(var2);
+            console.log(var3);
+        
+        }
+          console.log(var1);
+            console.log(var2);
+            console.log(var3);
+    </script>
+</body>
+</html>

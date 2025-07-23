@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Closure</h1>
+
+    
+    <script>
+        // Functions along with its lexical scope bundulled togather form a closure
+
+        // function x(){
+            // var a = 7;
+            // function y(){
+                //what should it print ans=> 100 because the value is not stored instead refernce is sored inside a  
+            //     console.log(a);
+            // }
+        //     a = 100;
+        //     return y
+        // }
+        // let z= x();
+        // console.log(z);
+        // z();
+
+
+
+
+        ///////////////////Closure Interview Question///////////////////////
+// use let instead of var b/c let is block scope and it create new copy of i every time
+        function closed(){
+            //var-> 6 || let->1,2,3,4,5
+//     for(var i = 0; i<=5; i++){
+// function f(i){
+//     setTimeout(function(){
+//         console.log(i)
+//     },i * 1000);
+// }
+// }
+
+// if an interviewer said you can't use llet u have to fix it with var so how?
+// we  can form a closure so every time it will create new copy of that refernce
+            //var
+for(var i = 0; i<=5; i++){
+   function f(x){
+    setTimeout(function(){
+        console.log(x)
+    },x * 1000);
+}
+   
+f(i);
+}
+}
+closed()
+console.log('checking')
+
+
+    </script>
+</body>
+</html>

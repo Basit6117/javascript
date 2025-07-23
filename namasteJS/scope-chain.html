@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Scope chain</h1>
+
+    <script>
+        //scope in Js is directly related to lexical environment
+        //lexical env is local memory plus lexical env of  parent
+        // function a(){
+        //     console.log(x); // x will be searched in local space if not found it will see outside
+        // }
+        // x=600;
+        // a();
+
+        function c(){
+                    var m = "I love Silence"; //is m inside scope of a function
+            function f(){
+            }
+            f();
+        }
+        c();
+        // console.log(m);
+        //sccope mean where u access a specific variable or function in our code
+
+        ////////////////////////////////////////Lexical Envirenment//////////
+        // whenever an execution context is created  a  LEXICAL ENVIRONMENTIS is also created
+        // -------->Lexical environment is the local memory along with  lexical environmment of its parent
+        //------------>Lexical is a term means in hirarchy or in a sequence
+        //---------------->In above example -- f() -- is lexically inside c() and c() is lexically inside global scope
+        //+++++++++++++++++++++++++++++++
+        // +++++++++++++++++++++++++++++++++
+        // _____________________________________
+        // When execution context is created u also get lexical environment of its parent
+        //                   |                        |
+        //                   |                        |  
+        //                   |       f()[ ***      ]  |    ***(Scope Chain) is assuming refernce to the lexical environment of its parent
+        //                   |                        |        so lexical environment of f() is c() b/c f() is lexically inside f()
+        //                   |  c() execu [***  f() ] |        so it got access to c() and its lexical envornment which is global scope for c()
+        //                   |                        |  
+        //                   | global exec [*** c()  ]|
+        //                   |________________________|                 
+        //                        Call Stack
+                  
+        
+        // _______________________________________________________________________________________
+        function s(){
+            var ff = "i am here"
+            t()
+            function t(){
+                u()
+               function u(){
+                v()
+                function v(){
+                    console.log(ff)//so it will get access to  that ff because of lexical  environment
+                }                   //o this way of finding is called ____scope chain____
+               }
+            }
+        }
+        s();
+    </script>
+</body>
+</html>
