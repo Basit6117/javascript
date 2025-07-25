@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>closure</h1>
+    <script>
+    //     function x(){
+    //         var var1 = 65432
+    //         function y(){
+    //             console.log(var1)
+    //         }
+    //         return y;
+            
+    //     }
+    //   var var2 = x();
+    //   var2();
+
+function parentFunc(){
+var pa = 22332
+
+      function x(){
+    var a = 90999090;
+    function y(){
+        console.log(a, pa);
+    }
+    a = 30000
+   y()
+}
+x();
+}
+parentFunc()
+
+
+//closure interview Q/A
+// function interviewQuestion(){
+//      for(var i = 1; i<=5; i++){
+//          setTimeout(function (){   
+//             console.log(i);
+//         },i * 1000);
+//     }
+// }
+// interviewQuestion()//print 6,6,6,6,6  
+// ______________________use let instead of var_________________________________________
+// to solve this problem use let instead of var 
+function interviewQuestion(){
+     for(let i = 1; i<=5; i++){
+         setTimeout(function (){   
+            console.log(i);
+        },i * 1000);
+    }
+}
+interviewQuestion()//print 1,2,3,4,5  
+// ________________if interviewer say u can not use let  so then closure will help_____________________
+function interviewQuestion(){
+    for(let i = 1; i<=5; i++){
+    function close(param){
+         setTimeout(function (){   
+            console.log(param);
+        },param * 1000);
+    }
+     
+    close(i)
+    }
+}
+interviewQuestion()//print 1,2,3,4,5  
+</script>
+</body>
+</html>
