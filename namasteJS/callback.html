@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback function</title>
+</head>
+<body>
+    <h1>CallBack function</h1>
+    <button id="btn">Click</button>
+    <script>
+        // setTimeout(function(){
+        //     console.log('timer expired')
+        // },5000)
+        // function x(y){
+        //     console.log('x funct called')
+        //     y()
+        // }
+
+        // x(function y(){
+        //     console.log('y called')
+
+        // })
+
+        // ____________________________Event listner__________________________________
+
+// document.getElementById("btn").
+// addEventListener("click", function xyz(){
+//     console.log('i was clicked');
+// })
+
+
+///////////////count how many type button is clicked//////////////
+// let count = 0; // global variable it can be changed so to hide and best way is to make a closure
+// document.getElementById("btn").
+// addEventListener("click", function xyz(){
+//     console.log('i was clicked', ++count);
+// })
+
+function attachEventListner(){
+    let count = 0; 
+document.getElementById("btn").
+addEventListener("click", function xyz(){
+    console.log('i was clicked', ++count);
+})
+}
+attachEventListner();
+    </script>
+</body>
+</html>
