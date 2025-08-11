@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Higher Order function</h1>
+    <script>
+        //calculate area of the radius
+        //         function cacculateArea(radius){
+      //             const output =[];
+      // for(let i = 0; i<radius.length; i++){
+      //    output.push(Math.PI * radius[i] * radius[i])
+      // }
+      // return output;
+      //         }
+      //     console.log(cacculateArea(radius))
+      //     // _________________________________________________________
+      //calculate circumference of the give radius
+      //       function calculateCircumference(radius){
+      //             const output =[];
+      // for(let i = 0; i<radius.length; i++){
+      //    output.push(2 * Math.PI * radius[i] * radius[i])
+      // }
+      // return output;
+      //         }
+      //     console.log(calculateCircumference(radius))
+      
+      // ________________________________________________
+      // calculate diameter of the given radius
+      //   function calculateDiameter(radius){
+        //     const output =[];
+        //  for(let i = 0; i<radius.length; i++){
+            //  output.push(2 * radius[i])
+            // }
+            //  return output;
+            // }
+            // console.log(calculateDiameter(radius))
+            // ******the above code dont folow DRY(Dont Repeat Yourself) Priciple (code repeatition)*
+            
+            // code Repeatition
+            //  1. const output
+            //  2. for(let i = 0; i<radius.length; i++){}
+            
+            //________|Solution|__________
+
+        const radius = [2, 6, 8, 9, 3];
+        //calculate diameter
+            const diameter = function (radius) {
+                return 2 * radius;
+      };
+      //calculate circumference
+      const circumference = function(radius){
+        return 2 * Math.PI * radius * radius
+      }
+      //calculate area of circle
+
+      const area = function(radius){
+        return Math.PI * radius * radius
+      }
+
+    //   generic function
+      function calculate(radius, logic) {
+        const output = [];
+        for (let i = 0; i < radius.length; i++) {
+          output.push(logic(radius[i]));
+        }
+        return output;
+      }
+      console.log(calculate(radius, diameter));
+      console.log(radius.map(diameter));// map work as  what calculate  function doing here
+      console.log(calculate(radius, circumference));
+      console.log(calculate(radius, area));
+
+
+      //to itrate any array with clculate function  like map does behind the scene
+         Array.prototype.calc = function(logic) {
+        const output = [];
+        for (let i = 0; i < this.length; i++) {
+          output.push(logic(this[i]));
+        }
+        return output;
+      }
+      const anotherArea = [43,21,67,89,90]
+      console.log(anotherArea.calc(diameter))
+    </script>
+  </body>
+</html>
