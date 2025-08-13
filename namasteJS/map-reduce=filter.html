@@ -34,7 +34,21 @@
       const output = arr.map((x) => x * 3);
       console.log(output);
 
- 
+//  ----------------------------------Filter function--------------------
+const marks = [88,55,22,58,23,92,87, 30, 46, 41]
+
+function papersMarks(marks){
+    return marks < 50
+}
+ const failsPap =  marks.filter(papersMarks)
+console.log(failsPap)
+
+// we can directky write function inside reduce
+
+const passPapers =  marks.filter((marks)=>{
+    return marks > 50
+})
+console.log(passPapers)
     </script>
   </body>
 </html>
