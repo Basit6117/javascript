@@ -15,14 +15,14 @@
 
       const arr = [1, 4, 9, 6, 33, 11, 23];
     //  map function functionalities behind the screen 
-       function manulaMap(arr) {
-        const newArr = [];
-         for (let i = 0; i < arr.length; i++) {
-          newArr.push(arr[i] * 3);
-         }
-        return newArr;
-      }
-      console.log(manulaMap(arr));
+      //  function manulaMap(arr) {
+      //   const newArr = [];
+      //    for (let i = 0; i < arr.length; i++) {
+      //     newArr.push(arr[i] * 3);
+      //    }
+      //   return newArr;
+      // }
+      // console.log(manulaMap(arr));
  //____________map function_______
       //     function double(x){
       //         return x * 2
@@ -31,24 +31,62 @@
       // we can directly write function inside map
 
       // to transform array to triple
-      const output = arr.map((x) => x * 3);
-      console.log(output);
+      // const output = arr.map((x) => x * 3);
+      // console.log(output);
 
 //  ----------------------------------Filter function--------------------
-const marks = [88,55,22,58,23,92,87, 30, 46, 41]
+// const marks = [88,55,22,58,23,92,87, 30, 46, 41]
 
-function papersMarks(marks){
-    return marks < 50
-}
- const failsPap =  marks.filter(papersMarks)
-console.log(failsPap)
+// function papersMarks(marks){
+//     return marks < 50
+// }
+//  const failsPap =  marks.filter(papersMarks)
+// console.log(failsPap)
 
 // we can directky write function inside reduce
+//console pass papers
+// const passPapers =  marks.filter((marks)=>{
+//     return marks > 50
+// })
+// console.log(passPapers)
 
-const passPapers =  marks.filter((marks)=>{
-    return marks > 50
-})
-console.log(passPapers)
+//---------------------------Reduce function------------------------
+const users = [
+  {firsNAme: 'ali', lastName: 'khan', age:26},
+  {firsNAme: 'basit', lastName: 'khalil', age:21},
+  {firsNAme: 'imran', lastName: 'khan', age:74},
+  {firsNAme: 'murad', lastName: 'saeed', age:26},
+]
+const  usersOutPut = users.map((user)=>user.firsNAme + " "+ user.lastName);
+// console.log(usersOutPut)
+const ages  = users.reduce(function(acc, curr){
+if(acc[curr.age]){
+  acc[curr.age] = ++acc[curr.age]
+}
+else{
+  acc[curr.age] = 1
+
+}
+return acc;
+},{})
+// console.log(ages)
+
+//chaining map and filter. we can also do this with only reduce
+const lessAge = users.filter((user)=>user.age < 30).map((user)=> user.firsNAme)
+console.log(lessAge)
+
+
+
+const lessAgeWithReduce =  users.reduce((acc, curr)=>{
+  if(curr.age < 30){
+    acc.push(curr.firsNAme)
+  }
+  return acc
+},[])
+console.log(lessAgeWithReduce)
+
+
+// polyfill of map reduce and filter ????????
     </script>
   </body>
 </html>
