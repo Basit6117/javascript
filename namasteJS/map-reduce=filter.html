@@ -76,7 +76,7 @@ const lessAge = users.filter((user)=>user.age < 30).map((user)=> user.firsNAme)
 console.log(lessAge)
 
 
-
+//with reduce
 const lessAgeWithReduce =  users.reduce((acc, curr)=>{
   if(curr.age < 30){
     acc.push(curr.firsNAme)
@@ -84,6 +84,13 @@ const lessAgeWithReduce =  users.reduce((acc, curr)=>{
   return acc
 },[])
 console.log(lessAgeWithReduce)
+const word =  'react'
+const founded = word.includes('f');
+console.log(founded)
+const currentWord = "react"
+const fan = 'r'
+const isInclude = currentWord.includes(fan);
+console.log(isInclude)
 
 
 // polyfill of map reduce and filter ????????

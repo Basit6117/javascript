@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problems and its solutions</title>
+</head>
+<body>
+    <h1>Slove problems</h1>
+
+    <script>
+        // how to reverse a string
+        function reverseString(str){
+            return str.split("").reverse().join();
+        }
+        // console.log(reverseString("loving"))
+
+        //reverse sentence use reverse() logic   not reverse function
+        function reverseFunc(strr){
+            const arr = strr.split(" ");
+            let reverse = "";
+            for(let i = arr.length -1;i>= 0; i--){
+                reverse += arr[i] + " "
+            }
+           return reverse
+        }
+       console.log(reverseFunc("help me to becom better programmer"))
+    </script>
+</body>
+</html>
